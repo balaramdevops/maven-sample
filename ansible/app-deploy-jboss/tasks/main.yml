@@ -3,7 +3,7 @@
 #
 - name: Copy application artifact to the app host, temp location
   copy:
-    src: "{{ app_artifact }}"
+    src: target/{{ app_artifact }}
     dest: /tmp
     mode: 0755
 - name: stop jboss
@@ -12,11 +12,11 @@
   shell: service jboss stop
   ignore_errors: yes    
 
-- name: Deploy HelloWorld to JBoss
+- name: Deploy mavenDemo app to JBoss
   become: yes
   become_method: sudo
   jboss:
-    deploy_path: /usr/share/jboss-as/standalone/deployments/
+    deploy_path: "{{ deploy_path }}"
     src: /tmp/{{ app_artifact }}
     deployment: "{{ app_artifact }}"
     state: present
