@@ -8,14 +8,11 @@ pipeline {
                 sh 'mvn clean install' 
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'cd ansible;ansible-playbook -i hosts middleware.yaml'
             }
         }
     }
