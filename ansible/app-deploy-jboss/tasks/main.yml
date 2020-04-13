@@ -5,12 +5,7 @@
   copy:
     src: "{{ WORKSPACE }}/target/{{ app_artifact }}"
     dest: /tmp
-    mode: 0755
-- name: stop jboss
-  become: yes
-  become_method: sudo
-  shell: service jboss stop
-  ignore_errors: yes    
+    mode: 0755  
 
 - name: Deploy mavenDemo app to JBoss
   become: yes
