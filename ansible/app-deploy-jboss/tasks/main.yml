@@ -6,6 +6,11 @@
     src: "{{ app_artifact }}"
     dest: /tmp
     mode: 0755
+- name: stop jboss
+  become: yes
+  become_method: sudo
+  shell: service jboss stop
+  ignore_errors: yes    
 
 - name: Deploy HelloWorld to JBoss
   become: yes
