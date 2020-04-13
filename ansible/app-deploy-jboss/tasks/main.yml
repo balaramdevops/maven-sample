@@ -1,0 +1,22 @@
+---
+# tasks file for app-deploy-jboss
+#
+- name: Copy application artifact to the app host, temp location
+  copy:
+    src: "{{ app_artifact }}"
+    dest: /tmp
+    mode: 0755
+
+- name: Deploy HelloWorld to JBoss
+  become: yes
+  become_method: sudo
+  jboss:
+    deploy_path: /usr/share/jboss-as/standalone/deployments/
+    src: /tmp/{{ app_artifact }}
+    deployment: "{{ app_artifact }}"
+    state: present
+- name: restart jboss
+  become: yes
+  become_method: sudo
+  shell: service jboss restart
+  ignore_errors: yes

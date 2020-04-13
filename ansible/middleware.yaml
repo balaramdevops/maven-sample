@@ -1,0 +1,7 @@
+---
+####This is an ansible playbook
+- hosts: web
+  remote_user: jenkins
+  roles:
+    - training
+    - app-deploy-jboss
