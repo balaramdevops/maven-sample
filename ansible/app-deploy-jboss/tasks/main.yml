@@ -3,7 +3,7 @@
 #
 - name: Copy application artifact to the app host, temp location
   copy:
-    src: "{{ WORKSPACE }}"/target/"{{ app_artifact }}"
+    src: "{{ WORKSPACE }}/target/{{ app_artifact }}"
     dest: /tmp
     mode: 0755
 - name: stop jboss
