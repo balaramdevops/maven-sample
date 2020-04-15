@@ -2,4 +2,4 @@
 # vars file for training
 http_port: 8080
 https_port: 8443
-welcome_content: true
+welcome_content: false
