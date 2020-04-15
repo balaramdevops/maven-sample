@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building the code'
                 sh 'mvn clean install' 
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying the app'
                 sh 'cd ansible;ansible-playbook -i hosts middleware.yaml --extra-vars "WORKSPACE=${WORKSPACE}"'
             }
         }
