@@ -19,7 +19,7 @@ Here is the Documentation on how to set up this.
 https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html#inventory-script-example-aws-ec2
 
 This playbook will install jboss and deploy the war file
-Access the app: http://<ListenAddress>:8080/mavenDemo
+Access the app: http://ipaddress:8080/mavenDemo
 
 
 Ansible has very good documentation of modules. Here is the link for the Ansible modules.
