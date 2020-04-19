@@ -4,8 +4,8 @@ To clone the repository
 git clone https://github.com/balaramdevops/maven-sample.git
 
 Build Artifact:
-  cd maven-sample
-  mvn clean install
+		cd maven-sample
+		mvn clean install
 
 This will create a war file in the target folder.
 
