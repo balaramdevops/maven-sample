@@ -14,8 +14,7 @@ ansible-playbook -i hosts middleware.yaml
 
 Note: Make sure you have proper ipaddress specified in the hosts file and have ssh keys configured and proper privileges setup for the "remote_user"
 
-This playbook will install jboss and deploy the war file that 
-Access the app:Screen Shot 2020-04-13 at 11.53.38 AM
-http://<ListenAddress>:8080/mavenDemo
+This playbook will install jboss and deploy the war file
+Access the app: http://<ListenAddress>:8080/mavenDemo
   
   
