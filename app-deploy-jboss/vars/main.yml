@@ -1,0 +1,4 @@
+---
+# vars file for app-deploy-jboss
+app_artifact: mavenDemo.war
+deploy_path: /usr/share/jboss-as/standalone/deployments/

@@ -1,0 +1,22 @@
+---
+# tasks file for app-deploy-jboss
+#
+- name: Copy application artifact to the app host, temp location
+  copy:
+    src: "{{ WORKSPACE }}/target/{{ app_artifact }}"
+    dest: /tmp
+    mode: 0755  
+
+- name: Deploy mavenDemo app to JBoss
+  become: yes
+  become_method: sudo
+  jboss:
+    deploy_path: "{{ deploy_path }}"
+    src: /tmp/{{ app_artifact }}
+    deployment: "{{ app_artifact }}"
+    state: present
+- name: restart jboss
+  become: yes
+  become_method: sudo
+  shell: service jboss restart
+  ignore_errors: yes

@@ -1,0 +1,44 @@
+---
+# # tasks file for training
+# - name: install dependent packages
+#   yum: 
+#     name:
+#       - telnet
+#       - curl
+#       - wget
+#       - dos2unix
+#     state: latest
+#   become: yes
+#   become_method: sudo
+# - name: install apache webserver
+#   yum:
+#     name: httpd
+#     state: latest
+#   become: yes
+#   become_method: sudo
+
+# - name: start apache webserver
+#   service: 
+#     name: httpd
+#     state: restarted
+#   become: true
+#   become_method: sudo
+# - name: create index.html and copy to apache documentroot
+#   copy:
+#     src: index.html
+#     dest: /var/www/html/index.html
+#     mode: 0755
+#     owner: root
+#     group: root
+#   become: yes
+#   become_method: sudo
+# - name: start apache webserver
+#   service:
+#     name: httpd
+#     state: restarted
+#   become: true
+#   become_method: sudo 
+
+- name: install and configure jboss
+  include:
+    jboss.yaml 
